@@ -33,10 +33,20 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+app.get('/', function(req, res) {
+  res.render('index.html');
+});
+
 app.get('/messages', function(req, res) {
-  res.render('message.html', {
-    title: 'Send Messages'
-  });
+  res.render('message.html');
+});
+
+app.get('/voice', function(req, res) {
+  res.render('voice.html');
+});
+
+app.get('/contact', function(req, res) {
+  res.render('contact.html');
 });
 
 app.post('/messages/send', function(req, res) {
