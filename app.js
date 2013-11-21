@@ -109,14 +109,14 @@ app.post('/voice/receive', function(req, res) {
   var twiml = new twilio.TwimlResponse();
 
   // TODO see: https://www.twilio.com/docs/api/twiml/sms/twilio_request req.body.Body
-  twiml.say('Pinkepank der Schmid ist krank, wo soll er wohnen, unten oder oben?', {
+  twiml.say('Pinkepank der Schmid ist krank, wo soll er wohnen unten oder oben?', {
     voice: 'woman',
     language: 'de'
   }).pause({
     length: '1'
   }).gather({
-    timeout: '5',
-    finishOnKey: '*#',
+    timeout: '8',
+    finishOnKey: '1234567890',
     action: '/voice/receive/gather',
     method: 'POST'
   }, function() {
