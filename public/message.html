@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Com Router</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/business-casual.css" rel="stylesheet">
+  </head>
+
+  <body>
+  
+    <div class="brand"><a href="index.html">Com Router</a></div>
+    <div class="address-bar">Enabling diverse communication, because it's fun...</div>
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Com Router</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="message.html">Messages</a></li>
+            <li><a href="voice.html">Voice</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">Send <strong>Message</strong></h2>
+            <hr>
+            <p>Send an SMS to anyone you want. Just type the number and your message...</p>
+                <form role="form">
+                  <div class="row">
+                    <div class="form-group col-lg-6">
+                      <label for="fromNumber">From</label>
+                      <input id="fromNumber" type="phone" class="form-control" value="+15878000700" disabled>
+                    </div>
+                    <div class="form-group col-lg-6">
+                      <label for="toNumber">Number</label>
+                      <input id="toNumber" type="phone" class="form-control" placeholder="e.g. +41790070707">
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="form-group col-lg-12">
+                      <label>Message</label>
+                      <textarea id="message" class="form-control" rows="6"></textarea>
+                    </div>
+                    <div class="form-group col-lg-12">
+                      <button id="sendMessage" type="submit" class="btn btn-default">Send</button>
+                    </div>
+                </div>
+              </form>
+          </div>
+
+          <div id="response" class="col-lg-12" style="display:none;">
+            <p>Respect...</p>
+          </div>
+
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="box">
+          <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">Receive <strong>Message</strong></h2>
+
+            <hr>
+            <p>For a short test drive, send an sms to:
+            <cite>+15878000700</cite>
+            </p>
+          </div>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="box">
+          <div class="col-lg-12">
+             <p>Com Router can also receive messages and answer in any way you want. You could for example define Codes like "HELP", or "STATS", or basically anything you need. the request will then call the service you want and respond in the way you define.
+             </p>
+          </div>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="box">
+          <div class="col-lg-12">
+             <p>Com Router can act as extended arm for your business applications, to control, inform and entertain via text or media messages.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+    </div><!-- /.container -->
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <p>copyright &copy; www.intesso.com 2013</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Make sure to add jQuery - download the most recent version at http://jquery.com/ -->
+    <script src="js/jquery.js"></script>
+    <script src="js/superagent.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/app.js"></script>
+
+
+  </body>
+</html>
