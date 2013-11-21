@@ -25,6 +25,7 @@ $(function() {
     var from = $('#fromNumber').val();
     var to = $('#toNumber').val();
     var message = $('#message').val();
+    var password = $('#password').val();
 
     // asynchronously post with superagent to server
     superagent
@@ -33,6 +34,7 @@ $(function() {
       .send({
         'from': from,
         'to': to,
+        'password': password,
         'body': message
       })
       .end(function(err, res) {

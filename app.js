@@ -51,12 +51,28 @@ app.get('/contact', function(req, res) {
 
 app.post('/messages/send', function(req, res) {
   console.log('/messages/send', req.body);
+
+  // check password
+  var crypto = require('crypto'); 
+  var hash = crypto.createHash('sha256');
+  hash.update(req.body.password);
+  hash = hash.digest('hex');
+  if (hash !== settings.password) {
+    res.send(200, {
+      message: 'wrong password',
+      status: 400
+    });
+    res.end();
+    return;
+  }
+
+  // send message
   client.sendMessage(req.body, function(err, data) {
     if (err) {
       console.error('/messages/send error:', err, data);
       res.send(200, err);
       res.end();
-      return
+      return;
     }
     console.log('/messages/send success:', err, data);
     res.send(200, {
@@ -172,7 +188,7 @@ app.post('/voice/receive/gather', function(req, res) {
       length: '1'
     }).hangup();
   }
-  
+
   res.type('text/xml');
   res.send(200, twiml.toString());
 
