@@ -70,24 +70,7 @@ app.post('/messages/receive', function(req, res) {
   var twiml = new twilio.TwimlResponse();
 
   // TODO see: https://www.twilio.com/docs/api/twiml/sms/twilio_request req.body.Body
-  twiml.message('Really? Well what do you mean with: ' + req.body);
-  res.type('text/xml');
-  res.send(200, twiml.toString());
-
-});
-
-app.post('/voice/thankyou', function(req, res) {
-  console.log('/voice/combox body', req.body);
-
-  //Create TwiML response
-  var twiml = new twilio.TwimlResponse();
-
-  // TODO see: https://www.twilio.com/docs/api/twiml/sms/twilio_request req.body.Body
-  twiml.say('Thank you', {
-    voice: 'woman',
-    language: 'en-gb'
-  }).hangup();
-
+  twiml.message('Really? Well what do you mean with: ' + req.body.Body);
   res.type('text/xml');
   res.send(200, twiml.toString());
 
@@ -179,6 +162,26 @@ app.post('/voice/receive/gather', function(req, res) {
       length: '1'
     }).hangup();
   }
+  
+  res.type('text/xml');
+  res.send(200, twiml.toString());
+
+});
+
+app.post('/voice/thankyou', function(req, res) {
+  console.log('/voice/combox body', req.body);
+
+  //Create TwiML response
+  var twiml = new twilio.TwimlResponse();
+
+  // TODO see: https://www.twilio.com/docs/api/twiml/sms/twilio_request req.body.Body
+  twiml.say('Thank you', {
+    voice: 'woman',
+    language: 'en-gb'
+  }).hangup();
+
+  res.type('text/xml');
+  res.send(200, twiml.toString());
 
 });
 
