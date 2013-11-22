@@ -1,8 +1,9 @@
 $(function() {
-  console.log('bää');
+
+  $('#password').tooltip({'trigger':'focus'});
 
   function inform(err, res) {
-    console.log(err, res);
+    //console.log(err, res);
     $('#response').hide();
     if (err) {
       $('#response').html(err).css('color', 'red').fadeIn();
