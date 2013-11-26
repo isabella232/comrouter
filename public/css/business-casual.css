@@ -172,4 +172,10 @@ footer p {
   font-size: 1.25em;
 }
 
+.carousel-intro {
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 }
